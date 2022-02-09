@@ -1,0 +1,23 @@
+.index-page .content {
+    display: grid;
+
+    grid-template-areas: 
+        "title pic1 gap1"
+        "pic2 gap2 pic3"
+        "news pic4 pic4"
+        "pic5 adv adv";
+    
+    grid-template-rows: 460px 610px 840px 340px;
+    grid-template-columns: 840px 459px 381px;
+
+    width: 100%;
+
+    @each $selector, $area in ( grid-cell-11: title, grid-cell-12: pic1, grid-cell-13: gap1,
+                                grid-cell-21: pic2, grid-cell-22: gap2, grid-cell-23: pic3,
+                                grid-cell-31: news, grid-cell-32: pic4, 
+                                grid-cell-41: pic5, grid-cell-42: adv) {
+        .#{$selector} {
+            grid-area: $area;
+        }
+    }
+}
