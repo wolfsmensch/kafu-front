@@ -1,4 +1,11 @@
 $footer-color: #f8f8f8;
+$socials-icon-size: 32px;
+
+%social-icon {
+    display: inline-block;
+    width: $socials-icon-size;
+    height: $socials-icon-size;
+}
 
 .footer-wrapper {
     width: 100%;
@@ -25,6 +32,34 @@ $footer-color: #f8f8f8;
                 background-position: 8px center;
                 background-size: 13px 16.25px;
                 background-repeat: no-repeat;
+            }
+
+            .socials {
+                a {
+                    @extend %social-icon;
+                    cursor: pointer;
+                    margin-right: 14px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                
+                .icon {
+                    @extend %social-icon;
+
+                    background: {
+                        position: center;
+                        size: contain;
+                        repeat: no-repeat;
+                    }
+
+                    @each $name in (fb, inst, yt, wa) {
+                        &.icon-#{$name} {
+                            background-image: url(../images/icon-#{$name}.png);
+                        }
+                    }
+                }
             }
         }
     }
