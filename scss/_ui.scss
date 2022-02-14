@@ -1,10 +1,13 @@
 $primary-color: #394188;
+$text-primary-color: #323F8B;
 
 .btn {
+    display: inline-block;
     color: #fff;
     background: $primary-color;
     cursor: pointer;
     padding: 8px 19px;
+    border: 1px solid $primary-color;
 
     font: {
         size: 24px;
@@ -17,10 +20,22 @@ $primary-color: #394188;
     }
 }
 
+.btn-sec {
+    @extend .btn;
+
+    color: $text-primary-color;
+    background: transparent;
+}
+
 div.picture {
     background: {
         position: top center;
         size: 100% auto;
         repeat: no-repeat;
     }
+}
+
+a {
+    color: $text-primary-color;
+    text-decoration: none;
 }
