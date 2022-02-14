@@ -11,6 +11,8 @@ $header-color: #f8f8f8;
 
     background-color: $header-color;
 
+    z-index: 100;
+
     header {
         display: flex;
         flex-direction: row;

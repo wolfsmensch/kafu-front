@@ -90,5 +90,12 @@ $text-secondary-color: #848484;
             top: 0;
             bottom: 0;
         }
+
+        &.grid-cell-21 {
+            .picture {
+                background-size: auto 100%;
+                background-position: top right;
+            }
+        }
     }
 }
