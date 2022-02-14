@@ -1,4 +1,5 @@
 $main-color: #394188;
+$text-primary-color: #323F8B;
 $text-secondary-color: #848484;
 
 .index-page .content {
@@ -95,6 +96,55 @@ $text-secondary-color: #848484;
             .picture {
                 background-size: auto 100%;
                 background-position: top right;
+            }
+        }
+    }
+
+    .news {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: $text-primary-color;
+        padding: 120px 44px;
+
+        %news-sec-text {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .counter {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+
+            @extend %news-sec-text;
+        }
+
+        h2 {
+            @extend %news-sec-text;
+        }
+
+        .published-time {
+            @extend %news-sec-text;
+        }
+
+        .news-list {
+            display: flex;
+            flex-grow: 1;
+
+            section {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                h3 {
+                    margin: 0;
+                    font-size: 54px;
+                    font-weight: 600;
+                    line-height: 66px;
+                }
             }
         }
     }
