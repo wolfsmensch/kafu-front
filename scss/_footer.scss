@@ -1,10 +1,21 @@
 $footer-color: #f8f8f8;
+$footer-logo-size: 151px;
+$footer-links-color: #00D1FF;
+$text-primary-color: #323F8B;
 $socials-icon-size: 32px;
 
 %social-icon {
     display: inline-block;
     width: $socials-icon-size;
     height: $socials-icon-size;
+}
+
+%background-fit {
+    background: {
+        position: center;
+        size: contain;
+        repeat: no-repeat;
+    }
 }
 
 .footer-wrapper {
@@ -14,8 +25,13 @@ $socials-icon-size: 32px;
     footer {
         width: 100%;
         max-width: 1380px;
+        color: $text-primary-color;
         padding: 20px 0;
         margin: 0 auto;
+
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
 
         .row {
             width: 100%;
@@ -24,6 +40,10 @@ $socials-icon-size: 32px;
         .top-footer {
             display: flex;
             justify-content: space-between;
+
+            padding-bottom: 15px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid $text-primary-color;
 
             .search {
                 padding-left: 29px;
@@ -44,20 +64,64 @@ $socials-icon-size: 32px;
                         margin-right: 0;
                     }
                 }
-                
+
                 .icon {
                     @extend %social-icon;
-
-                    background: {
-                        position: center;
-                        size: contain;
-                        repeat: no-repeat;
-                    }
+                    @extend %background-fit;
 
                     @each $name in (fb, inst, yt, wa) {
                         &.icon-#{$name} {
                             background-image: url(../images/icon-#{$name}.png);
                         }
+                    }
+                }
+            }
+        }
+
+        .bottom-footer {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                margin: 0;
+                word-wrap: break-word;
+            }
+
+            .logo {
+                width: $footer-logo-size;
+                height: $footer-logo-size;
+
+                @extend %background-fit;
+
+                margin-right: 27px;
+            }
+
+            .copyright {
+                flex-grow: 1;
+                font-weight: 600;
+            }
+
+            .addr {
+                max-width: 174px;
+            }
+
+            .phones {
+                margin-right: 66px;
+            }
+
+            .section {
+                .title {
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                }
+
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+
+                    a {
+                        color: $footer-links-color;
                     }
                 }
             }
