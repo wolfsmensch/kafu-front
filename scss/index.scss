@@ -9,7 +9,8 @@ $text-secondary-color: #848484;
         "title pic1 gap1"
         "pic2 gap2 pic3"
         "news pic4 pic4"
-        "pic5 adv adv";
+        "pic5 adv adv"
+        "part part part";
     
     grid-template-rows: 460px 610px 840px 340px;
     grid-template-columns: 840px 459px 381px;
@@ -19,7 +20,8 @@ $text-secondary-color: #848484;
     @each $selector, $area in ( grid-cell-11: title, grid-cell-12: pic1, grid-cell-13: gap1,
                                 grid-cell-21: pic2, grid-cell-22: gap2, grid-cell-23: pic3,
                                 grid-cell-31: news, grid-cell-32: pic4, 
-                                grid-cell-41: pic5, grid-cell-42: adv) {
+                                grid-cell-41: pic5, grid-cell-42: adv,
+                                grid-cell-5: part) {
         .#{$selector} {
             grid-area: $area;
         }
@@ -155,6 +157,16 @@ $text-secondary-color: #848484;
                 font-size: 36px;
                 line-height: 44px;
             }
+        }
+    }
+
+    .partners {
+        padding: 50px 0;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            margin-right: 60px;
         }
     }
 }
