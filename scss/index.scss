@@ -147,5 +147,14 @@ $text-secondary-color: #848484;
                 }
             }
         }
+
+        &.announcements {
+            padding: 14px 25px;
+
+            .news-list section h3 {
+                font-size: 36px;
+                line-height: 44px;
+            }
+        }
     }
 }
