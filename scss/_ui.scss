@@ -1,4 +1,5 @@
 $primary-color: #394188;
+$primary-color-transparent: rgba(57, 65, 136, 0.5);
 $text-primary-color: #323F8B;
 
 .btn {
@@ -38,4 +39,25 @@ div.picture {
 a {
     color: $text-primary-color;
     text-decoration: none;
+}
+
+%active-text-field {
+    color: $primary-color;
+}
+
+input {
+    &[type="text"] {
+        color: $primary-color-transparent;
+        background: transparent;
+        border: 1px solid $primary-color;
+        padding: 4px 8px;
+
+        &:hover {
+            @extend %active-text-field;
+        }
+
+        &:focus {
+            @extend %active-text-field;
+        }
+    }
 }
