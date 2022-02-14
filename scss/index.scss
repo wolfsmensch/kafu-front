@@ -160,6 +160,40 @@ $text-secondary-color: #848484;
         }
     }
 
+    .news-banners {
+        position: relative;
+
+        .btn-banner {
+            position: absolute;
+            top: calc(50% - 44px);
+            width: 49.5px;
+            height: 88px;
+
+            cursor: pointer;
+
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            z-index: 50;
+
+            &.btn-left {                
+                left: 42px;
+                background-image: url(../images/btn-left.png);
+            }
+
+            &.btn-right {
+                right: 42px;
+                background-image: url(../images/btn-right.png);
+            }
+        }
+    }
+
     .partners {
         padding: 50px 0;
         text-align: center;
