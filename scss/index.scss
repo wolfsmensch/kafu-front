@@ -15,6 +15,11 @@ $text-secondary-color: #848484;
     grid-template-rows: 460px 610px 840px 340px;
     grid-template-columns: 840px 459px 381px;
 
+    @media screen and (max-width: 1680px) {
+        grid-template-rows: 27.32vw 36.31vw 50vw 20.24vw;
+        grid-template-columns: 50vw 27.32vw 22.68vw;
+    }
+
     width: 100%;
 
     @each $selector, $area in ( grid-cell-11: title, grid-cell-12: pic1, grid-cell-13: gap1,
