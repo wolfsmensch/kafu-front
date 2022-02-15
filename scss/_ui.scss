@@ -45,6 +45,13 @@ a {
     color: $primary-color;
 }
 
+@mixin search-icon {
+    background-image: url(../images/icon-search.png);
+    background-position: 8px center;
+    background-size: 13px 16.25px;
+    background-repeat: no-repeat;
+}
+
 input {
     &[type="text"] {
         color: $primary-color-transparent;
@@ -58,6 +65,11 @@ input {
 
         &:focus {
             @extend %active-text-field;
+        }
+
+        &.search {
+            padding-left: 29px;
+            @include search-icon();
         }
     }
 }

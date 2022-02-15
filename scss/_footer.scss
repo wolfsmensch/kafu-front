@@ -45,15 +45,6 @@ $socials-icon-size: 32px;
             margin-bottom: 16px;
             border-bottom: 1px solid $text-primary-color;
 
-            .search {
-                padding-left: 29px;
-
-                background-image: url(../images/icon-search.png);
-                background-position: 8px center;
-                background-size: 13px 16.25px;
-                background-repeat: no-repeat;
-            }
-
             .socials {
                 a {
                     @extend %social-icon;

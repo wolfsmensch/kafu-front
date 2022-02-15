@@ -17,9 +17,19 @@
 <body>
     <div class="header-wrapper">
         <header>
-            <a href="/">
+            <div class="search-box">
+                <label for="" class="search-toggl show-mobile"></label>
+                <input type="text" class="search hide-mobile" name="search" placeholder="Поиск...">
+            </div>
+            <a href="/" class="logo-box">
                 <div class="logo">KAFU</div>
             </a>
+            <label class="menu-btn" for="menu-toggl">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <input type="checkbox" name="menu-toggl" id="menu-toggl" hidden>
             <nav>
                 <ul class="section">
                     <li><a href="#">Об университете</a></li>
