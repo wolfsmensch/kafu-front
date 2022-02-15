@@ -45,10 +45,6 @@ $phoneWidth: 320px;
 
     font-size: $tabSize;
 
-    @media screen and (max-width: ($tabWidth - 1px)) {
-        display: none;
-    }
-
     @media screen and (min-width: ($tabWidth + 1px)) {
         font-size: calc($mVal * 100vw + $bVal);
     }
@@ -64,10 +60,6 @@ $phoneWidth: 320px;
     $bVal: $tabSize - $mVal * $phoneWidth;
 
     line-height: $tabSize;
-
-    @media screen and (max-width: ($tabWidth - 1px)) {
-        display: none;
-    }
 
     @media screen and (min-width: ($tabWidth + 1px)) {
         line-height: calc($mVal * 100vw + $bVal);
@@ -185,12 +177,20 @@ $phoneWidth: 320px;
             "adv"
             "part";
         
-        grid-template-rows: 100vw 1fr 100vw 1fr 40vw 1fr 1fr;
+        grid-template-rows: 100vw auto 100vw auto 40vw auto auto;
         grid-template-columns: 100vw;
     }
 
     .title-box {
         padding-left: 44px;
+
+        @media screen and (max-width: 1280px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding-left: 30px;
+        }
 
         h1 {
             color: $main-color;
@@ -213,7 +213,7 @@ $phoneWidth: 320px;
             line-height: 29px;
         }
 
-        .desc {
+        h1 + .desc {
             @include secondary-text();
 
             @include adaptive-font-tab(24px, 18px);
@@ -233,6 +233,23 @@ $phoneWidth: 320px;
             padding: 20px 53px;
             margin-left: auto;
             box-shadow: 0px 4px 90px rgba(0, 0, 0, .1);
+
+            z-index: 10;
+
+            @media screen and (max-width: 1576px) {
+                padding: 10px 20px;
+            }
+
+            @media screen and (max-width: 1280px) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                margin-right: -10%;
+            }
+
+            @media screen and (max-width: 576px) {
+
+            }
 
             .desc {
                 @include secondary-text();

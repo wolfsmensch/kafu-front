@@ -18,13 +18,19 @@ body {
 }
 
 .hide-mid-desktop {
-    @media screen and (max-width: 1279px) {
+    @media screen and (max-width: 1280px) {
         display: none;
     }
 }
 
 .show-mobile {
     @media screen and (min-width: 576px) {
+        display: none !important;
+    }
+}
+
+.show-mid-desktop {
+    @media screen and (min-width: 1280px) {
         display: none !important;
     }
 }
