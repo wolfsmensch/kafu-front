@@ -78,6 +78,62 @@ $phoneWidth: 320px;
     }
 }
 
+@mixin adaptive-font-all($pcSize, $tabSize, $phoneSize) {
+    $mValTab: ($pcSize - $tabSize) / ($maxWidth - $tabWidth);
+    $bValTab: $tabSize - $mValTab * $tabWidth;
+
+    $mValPhone: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bValPhone: $phoneSize - $mValPhone * $phoneWidth;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: $phoneSize;
+    }
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        font-size: calc($mValPhone * 100vw + $bValPhone);
+    }
+
+    @media screen and (min-width: $tabWidth) {
+        font-size: $tabSize;
+    }
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        font-size: calc($mValTab * 100vw + $bValTab);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        font-size: $pcSize;
+    }
+}
+
+@mixin adaptive-line-height-all($pcSize, $tabSize, $phoneSize) {
+    $mValTab: ($pcSize - $tabSize) / ($maxWidth - $tabWidth);
+    $bValTab: $tabSize - $mValTab * $tabWidth;
+
+    $mValPhone: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bValPhone: $phoneSize - $mValPhone * $phoneWidth;
+
+    @media screen and (max-width: $phoneWidth) {
+        line-height: $phoneSize;
+    }
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        line-height: calc($mValPhone * 100vw + $bValPhone);
+    }
+
+    @media screen and (min-width: $tabWidth) {
+        line-height: $tabSize;
+    }
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        line-height: calc($mValTab * 100vw + $bValTab);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        line-height: $pcSize;
+    }
+}
+
 .index-page .content {
     display: grid;
 
@@ -206,8 +262,9 @@ $phoneWidth: 320px;
 
         %news-sec-text {
             margin: 0;
-            font-size: 24px;
             font-weight: 400;
+
+            @include adaptive-font-all(24px, 18px, 12px);
         }
 
         .counter {
@@ -237,11 +294,17 @@ $phoneWidth: 320px;
 
                 h3 {
                     margin: 0;
-                    font-size: 54px;
                     font-weight: 600;
                     line-height: 66px;
+
+                    @include adaptive-font-all(54px, 30px, 18px);
+                    @include adaptive-line-height-all(65.83px, 36.57px, 21.94px);
                 }
             }
+        }
+
+        .btn-sec {
+            @include adaptive-font-all(24px, 18px, 12px);
         }
 
         &.announcements {
