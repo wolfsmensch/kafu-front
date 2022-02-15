@@ -17,6 +17,12 @@ body {
     }
 }
 
+.hide-mid-desktop {
+    @media screen and (max-width: 1279px) {
+        display: none;
+    }
+}
+
 .show-mobile {
     @media screen and (min-width: 576px) {
         display: none !important;

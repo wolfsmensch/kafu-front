@@ -147,11 +147,6 @@ $phoneWidth: 320px;
     grid-template-rows: 460px 610px 840px 340px;
     grid-template-columns: 840px 459px 381px;
 
-    @media screen and (max-width: 1680px) {
-        grid-template-rows: 27.32vw 36.31vw 50vw 20.24vw;
-        grid-template-columns: 50vw 27.32vw 22.68vw;
-    }
-
     width: 100%;
 
     @each $selector, $area in ( grid-cell-11: title, grid-cell-12: pic1, grid-cell-13: gap1,
@@ -162,6 +157,36 @@ $phoneWidth: 320px;
         .#{$selector} {
             grid-area: $area;
         }
+    }
+
+    @media screen and (max-width: 1680px) {
+        grid-template-rows: 27.32vw 36.31vw 50vw 20.24vw;
+        grid-template-columns: 50vw 27.32vw 22.68vw;
+    }
+
+    @media screen and (max-width: 1280px) {
+        grid-template-areas: 
+            "title pic1"
+            "pic4 news"
+            "adv pic5"
+            "part part";
+        
+        grid-template-rows: 50vw 50vw 35.94vw;
+        grid-template-columns: 50vw 50vw;
+    }
+
+    @media screen and (max-width: 576px) {
+        grid-template-areas: 
+            "pic1"
+            "title"
+            "pic4"
+            "news"
+            "pic5"
+            "adv"
+            "part";
+        
+        grid-template-rows: 100vw 1fr 100vw 1fr 40vw 1fr 1fr;
+        grid-template-columns: 100vw;
     }
 
     .title-box {
