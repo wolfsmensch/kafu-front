@@ -2,6 +2,82 @@ $main-color: #394188;
 $text-primary-color: #323F8B;
 $text-secondary-color: #848484;
 
+$maxWidth: 1680px;
+$tabWidth: 768px;
+$phoneWidth: 320px;
+
+@mixin adaptive-font($pcSize, $phoneSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bVal: $phoneSize - $mVal * $phoneWidth;
+
+    font-size: $phoneSize;
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        font-size: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        font-size: $pcSize;
+    }
+}
+
+@mixin adaptive-line-height($pcSize, $phoneSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bVal: $phoneSize - $mVal * $phoneWidth;
+
+    line-height: $phoneSize;
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        line-height: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        line-height: $pcSize;
+    }
+}
+
+@mixin adaptive-font-tab($pcSize, $tabSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $tabSize) / ($maxWidth - $phoneWidth);
+    $bVal: $tabSize - $mVal * $phoneWidth;
+
+    font-size: $tabSize;
+
+    @media screen and (max-width: ($tabWidth - 1px)) {
+        display: none;
+    }
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        font-size: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        font-size: $pcSize;
+    }
+}
+
+@mixin adaptive-line-height-tab($pcSize, $tabSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $tabSize) / ($maxWidth - $phoneWidth);
+    $bVal: $tabSize - $mVal * $phoneWidth;
+
+    line-height: $tabSize;
+
+    @media screen and (max-width: ($tabWidth - 1px)) {
+        display: none;
+    }
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        line-height: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        line-height: $pcSize;
+    }
+}
+
 .index-page .content {
     display: grid;
 
@@ -40,11 +116,11 @@ $text-secondary-color: #848484;
             margin: 0;
 
             font: {
-                size: 54px;
                 weight: 600;
             }
 
-            line-height: 65px;
+            @include adaptive-font(54px, 18px);
+            @include adaptive-line-height(65.83px, 21.94px);
         }
 
         @mixin secondary-text {
@@ -58,6 +134,9 @@ $text-secondary-color: #848484;
 
         .desc {
             @include secondary-text();
+
+            @include adaptive-font-tab(24px, 18px);
+            @include adaptive-line-height-tab(29.26px, 21.94px);
 
             p {
                 margin: 30px 0;
@@ -76,6 +155,8 @@ $text-secondary-color: #848484;
 
             .desc {
                 @include secondary-text();
+                @include adaptive-font(24px, 12px);
+                @include adaptive-line-height(29.26px, 14.63px);
             }
 
             h2 {
@@ -83,9 +164,15 @@ $text-secondary-color: #848484;
                 margin: 0;
 
                 font: {
-                    size: 36px;
                     weight: 600;
                 }
+
+                @include adaptive-font(36px, 18px);
+                @include adaptive-line-height(43.88px, 21.94px);
+            }
+
+            .btn {
+                @include adaptive-font(24px, 12px);
             }
         }
     }
