@@ -19,6 +19,14 @@ $text-primary-color: #323F8B;
         align: center;
         decoration: none;
     }
+
+    @media screen and (max-width: 768px) {
+        padding: 5px 35px;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 5px 10px;
+    }
 }
 
 .btn-sec {

@@ -339,6 +339,14 @@ $phoneWidth: 320px;
         color: $text-primary-color;
         padding: 120px 44px;
 
+        @media screen and (max-width: $tabWidth) {
+            padding: 25px 13px;
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 40px 5px 15px 5px;
+        }
+
         %news-sec-text {
             margin: 0;
             font-weight: 400;
@@ -352,14 +360,38 @@ $phoneWidth: 320px;
             right: 25px;
 
             @extend %news-sec-text;
+
+            @media screen and (max-width: $tabWidth) {
+                right: 13px;
+            }
+
+            @media screen and (max-width: 576px) {
+                top: 10px;
+                right: 5px;
+            }
         }
 
         h2 {
             @extend %news-sec-text;
+
+            @media screen and (max-width: $tabWidth) {
+                position: absolute;
+                top: 25px;
+                left: 13px;
+            }
+
+            @media screen and (max-width: 576px) {
+                top: 10px;
+                left: 5px;
+            }
         }
 
         .published-time {
             @extend %news-sec-text;
+
+            @media screen and (max-width: 576px) {
+                margin-bottom: 15px;
+            }
         }
 
         .news-list {
@@ -371,6 +403,10 @@ $phoneWidth: 320px;
                 flex-direction: column;
                 justify-content: space-around;
 
+                @media screen and (max-width: $tabWidth) {
+                    justify-content: center;
+                }
+
                 h3 {
                     margin: 0;
                     font-weight: 600;
@@ -378,6 +414,10 @@ $phoneWidth: 320px;
 
                     @include adaptive-font-all(54px, 30px, 18px);
                     @include adaptive-line-height-all(65.83px, 36.57px, 21.94px);
+
+                    @media screen and (max-width: $tabWidth) {
+                        margin-bottom: 15px;
+                    }
                 }
             }
         }
@@ -418,14 +458,28 @@ $phoneWidth: 320px;
 
             z-index: 50;
 
+            @media screen and (max-width: $tabWidth) {
+                top: calc(50% - 20px);
+                width: 23px;
+                height: 40px;
+            }
+
             &.btn-left {                
                 left: 42px;
                 background-image: url(../images/btn-left.png);
+
+                @media screen and (max-width: $tabWidth) {
+                    left: 20px;
+                }
             }
 
             &.btn-right {
                 right: 42px;
                 background-image: url(../images/btn-right.png);
+
+                @media screen and (max-width: $tabWidth) {
+                    right: 20px;
+                }
             }
         }
     }
