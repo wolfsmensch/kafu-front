@@ -192,6 +192,10 @@ $phoneWidth: 320px;
             padding-left: 30px;
         }
 
+        @media screen and (max-width: 576px) {
+            padding-left: 0;
+        }
+
         h1 {
             color: $main-color;
             margin: 0;
@@ -216,11 +220,15 @@ $phoneWidth: 320px;
         h1 + .desc {
             @include secondary-text();
 
-            @include adaptive-font-tab(24px, 18px);
+            @include adaptive-font-all(24px, 18px, 12px);
             @include adaptive-line-height-tab(29.26px, 21.94px);
 
             p {
                 margin: 30px 0;
+
+                @media screen and (max-width: $tabWidth) {
+                    margin: 15px 0;
+                }
             }
         }
 
@@ -247,8 +255,26 @@ $phoneWidth: 320px;
                 margin-right: -10%;
             }
 
-            @media screen and (max-width: 576px) {
+            @media screen and (max-width: 830px) {
+                min-width: 412px;
+            }
 
+            @media screen and (max-width: 576px) {
+                min-width: unset;
+                align-items: center;
+                padding: 5px 20%;
+                margin: 0;
+                text-align: center;          
+            }
+
+            .section {
+                @media all and (max-width: $tabWidth) {
+                    margin-bottom: 5px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0
+                }
             }
 
             .desc {
@@ -265,12 +291,23 @@ $phoneWidth: 320px;
                     weight: 600;
                 }
 
-                @include adaptive-font(36px, 18px);
+                // @include adaptive-font(36px, 18px);
+                @include adaptive-font-all(36px, 26px, 18px);
                 @include adaptive-line-height(43.88px, 21.94px);
             }
 
             .btn {
-                @include adaptive-font(24px, 12px);
+                // @include adaptive-font(24px, 12px);
+                @include adaptive-font-all(24px, 12px, 12px);
+
+                @media all and (max-width: $tabWidth) {
+                    padding: 5px 35px;
+                }
+
+                @media all and (max-width: ($tabWidth - 1px))
+                {
+                    font-size: 12px;
+                }
             }
         }
     }
