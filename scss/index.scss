@@ -429,9 +429,17 @@ $phoneWidth: 320px;
         &.announcements {
             padding: 14px 25px;
 
+            @media screen and (max-width: $tabWidth) {
+                padding: 25px 13px;
+            }
+
+            @media screen and (max-width: 576px) {
+                padding: 40px 5px 15px 5px;
+            }
+
             .news-list section h3 {
-                font-size: 36px;
-                line-height: 44px;
+                @include adaptive-font-all(54px, 27px, 18px);
+                @include adaptive-line-height-all(44px, 33px, 21.94px);
             }
         }
     }
