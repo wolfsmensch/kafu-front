@@ -1,6 +1,9 @@
 $header-height: 80px;
 $header-color: #f8f8f8;
 $main-color: #394188;
+$menu-bg-color: #394188;
+
+$change-menu-mode-size: 1280px;
 
 .header-wrapper {
     position: fixed;
@@ -169,6 +172,23 @@ $main-color: #394188;
             }
         }
 
+        #menu-toggl:checked {
+            ~ nav {
+                @media screen and (max-width: $change-menu-mode-size) {
+                    display: flex;
+                }
+            }
+
+            ~ .menu-btn {
+                z-index: 1150;
+
+                div {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        /* Меню навигации */
         nav {
             display: flex;
             flex-direction: row;
@@ -176,8 +196,23 @@ $main-color: #394188;
             align-items: center;
             flex-grow: 1;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: $change-menu-mode-size) {
                 display: none;
+
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+
+                flex-direction: column;
+                justify-content: center;
+
+                background-color: $menu-bg-color;
+
+                padding: 0 15%;
+
+                z-index: 1000;
             }
 
             ul.section {
@@ -186,8 +221,20 @@ $main-color: #394188;
                 list-style: none;
                 padding-left: 0;
 
+                @media screen and (max-width: $change-menu-mode-size) {
+                    width: 100%;
+                    margin: 0;
+                }
+
                 &:first-child {
                     flex-grow: 1;
+
+                    @media screen and (max-width: $change-menu-mode-size) {
+                        flex-grow: 0;
+                        padding-bottom: 25px;
+                        margin-bottom: 25px;
+                        border-bottom: 1px solid #fff;
+                    }
                 }
 
                 li {
@@ -198,8 +245,20 @@ $main-color: #394188;
                         margin-right: 25px;
                     }
 
+                    @media screen and (max-width: $change-menu-mode-size) {
+                        display: block;
+                        width: 100%;
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                        text-align: left;
+                    }
+
                     &:last-child {
                         margin-right: 0;
+
+                        @media screen and (max-width: $change-menu-mode-size) {
+                            margin-bottom: 0;
+                        }
                     }
 
                     a {
@@ -209,8 +268,16 @@ $main-color: #394188;
                             weight: 600;
                         }
 
+                        @media screen and (max-width: $change-menu-mode-size) {
+                            color: #fff;
+                        }
+
                         &.login {
                             color: #000;
+
+                            @media screen and (max-width: $change-menu-mode-size) {
+                                color: #fff;
+                            }
                         }
                     }
                 }
