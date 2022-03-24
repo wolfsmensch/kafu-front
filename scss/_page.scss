@@ -23,14 +23,26 @@ body {
     }
 }
 
-.show-mobile {
-    @media screen and (min-width: 576px) {
+.hide-tab-size {
+    @media screen and (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+.hide-only-on-tab {
+    @media screen and (max-width: 768px) and (min-width: 576px) {
         display: none !important;
     }
 }
 
 .show-mid-desktop {
     @media screen and (min-width: 1280px) {
+        display: none !important;
+    }
+}
+
+.show-mobile {
+    @media screen and (min-width: 576px) {
         display: none !important;
     }
 }
