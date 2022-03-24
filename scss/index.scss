@@ -438,7 +438,7 @@ $phoneWidth: 320px;
             }
 
             .news-list section h3 {
-                @include adaptive-font-all(54px, 27px, 18px);
+                @include adaptive-font-all(36px, 27px, 18px);
                 @include adaptive-line-height-all(44px, 33px, 21.94px);
             }
         }
