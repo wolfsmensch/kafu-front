@@ -1,0 +1,25 @@
+{
+  "name": "kafu-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch scss/:css/",
+    "host": "npx live-server",
+    "devmode": "npm run watch & npm run host"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfsmensch/kafu-front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wolfsmensch/kafu-front/issues"
+  },
+  "homepage": "https://github.com/wolfsmensch/kafu-front#readme",
+  "devDependencies": {
+    "http-server": "^14.1.0",
+    "live-server": "^1.1.0"
+  }
+}
