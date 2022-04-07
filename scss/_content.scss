@@ -2,6 +2,14 @@
     width: 100%;
     max-width: $content-max-width;
     margin: 0 auto 50px auto;
+
+    @media all and (max-width: $tabWidth) {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: $midPhoneWidth) {
+        margin-bottom: 25px;
+    }
 }
 
 .content {
@@ -9,9 +17,16 @@
         display: flex;
         justify-content: space-between;
         height: 760px;
+        margin-bottom: 50px;
 
         @media screen and (max-width: 1680px) {
             height: 48vw;
+        }
+
+        @media screen and (max-width: $midPhoneWidth) {
+            height: auto;
+            flex-direction: column;
+            margin-bottom: 25px;
         }
 
         .banner, .details {
@@ -20,10 +35,23 @@
             @media screen and (max-width: 1680px) {
                 width: 48vw;
             }
+
+            @media screen and (max-width: $tabWidth) {
+                width: 50vw;
+                margin-bottom: 15px;
+            }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 100vw;
+            }
         }
 
         .banner {
             position: relative;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                height: 100vw;
+            }
 
             .picture {
                 position: absolute;
@@ -44,13 +72,43 @@
 
             color: $main-color;
 
-            .head {
-                text-transform: uppercase;
+            @media all and (max-width: $tabWidth) {
+                padding: 35px 0;
             }
 
-            .title p {
-                width: 60%;
-                margin: auto;
+            @media screen and (max-width: $midPhoneWidth) {
+                padding: 10px 0;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            .head {
+                text-transform: uppercase;
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .title {
+                @media screen and (max-width: $midPhoneWidth) {
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    width: 60%;
+                    margin: auto;
+
+                    @media all and (max-width: $tabWidth) {
+                        width: 95%;
+                    }
+
+                    @media screen and (max-width: $midPhoneWidth) {
+                        margin-bottom: 10px;
+                    }
+                }
             }
 
             .head, .title p {
@@ -60,29 +118,65 @@
 
             h2 {
                 @include adaptive-font-all(48px, 30px, 18px);
+
+                @media all and (max-width: $tabWidth) {
+                    margin: 0;
+                }
             }
         }
     }
 
     .content-body {
+        @media screen and (max-width: $midPhoneWidth) {
+            text-align: center;
+        }
+
         &.with-menu {
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                flex-direction: column;
+            }
 
             .article-content {
                 flex-grow: 1;
                 margin-right: 75px;
+
+                @media all and (max-width: $tabWidth) {
+                    margin-right: 20px;
+                }
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    margin: 0 0 30px 0;
+                }
             }
 
             aside {
                 margin-right: 90px;
+
+                @media all and (max-width: $tabWidth) {
+                    margin-right: 5px;
+                }
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    margin: 0;
+                }
             }
         }
 
         .article-content {
             width: 100%;
             color: $main-color;
+            padding-left: 44px;
+
+            @media all and (max-width: $tabWidth) {
+                padding-left: 30px;
+            }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                padding: 0 25px;
+            }
         }
 
         h1 {
@@ -92,16 +186,58 @@
             @include adaptive-font-all(64px, 30px, 18px);
             @include adaptive-line-height-all(78px, 36px, 22px);
             font-weight: 300;
+
+            @media all and (max-width: $tabWidth) {
+                margin-bottom: 30px;
+            }
         }
 
         p {
             margin: 0 0 25px 0;
+            @include adaptive-font-all(24px, 18px, 12px);
+
+            @media all and (max-width: $tabWidth) {
+                margin-bottom: 15px;
+            }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                margin-bottom: 10px;
+            }
 
             &.emphasized {
                 margin-bottom: 50px;
                 @include adaptive-font-all(36px, 27px, 12px);
                 @include adaptive-line-height-all(44px, 32px, 14px);
                 font-weight: 600;
+
+                @media all and (max-width: $tabWidth) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        aside nav {
+            color: $main-color;
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin-bottom: 30px;
+                    @include adaptive-font-all(24px, 18px, 12px);
+                    @include adaptive-line-height-all(29px, 22px, 15px);
+                    font-weight: 300;
+
+                    @media all and (max-width: $tabWidth) {
+                        margin-bottom: 15px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
     }

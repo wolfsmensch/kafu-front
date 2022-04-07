@@ -4,6 +4,7 @@ $text-secondary-color: #848484;
 
 $maxWidth: 1680px;
 $tabWidth: 768px;
+$midPhoneWidth: 576px;
 $phoneWidth: 320px;
 
 @mixin adaptive-font($pcSize, $phoneSize) {
