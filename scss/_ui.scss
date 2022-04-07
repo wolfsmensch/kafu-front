@@ -2,6 +2,10 @@ $primary-color: #394188;
 $primary-color-transparent: rgba(57, 65, 136, 0.5);
 $text-primary-color: #323F8B;
 
+$maxWidth: 1680px;
+$tabWidth: 768px;
+$phoneWidth: 320px;
+
 .btn {
     display: inline-block;
     color: #fff;
@@ -34,6 +38,50 @@ $text-primary-color: #323F8B;
 
     color: $text-primary-color;
     background: transparent;
+}
+
+.btn-banner {
+    position: absolute;
+    top: calc(50% - 44px);
+    width: 49.5px;
+    height: 88px;
+
+    cursor: pointer;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 50;
+
+    @media screen and (max-width: $tabWidth) {
+        top: calc(50% - 20px);
+        width: 23px;
+        height: 40px;
+    }
+
+    &.btn-left {                
+        left: 42px;
+        background-image: url(../images/btn-left.png);
+
+        @media screen and (max-width: $tabWidth) {
+            left: 20px;
+        }
+    }
+
+    &.btn-right {
+        right: 42px;
+        background-image: url(../images/btn-right.png);
+
+        @media screen and (max-width: $tabWidth) {
+            right: 20px;
+        }
+    }
 }
 
 div.picture {

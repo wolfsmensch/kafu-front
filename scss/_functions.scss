@@ -1,0 +1,127 @@
+$main-color: #394188;
+$text-primary-color: #323F8B;
+$text-secondary-color: #848484;
+
+$maxWidth: 1680px;
+$tabWidth: 768px;
+$phoneWidth: 320px;
+
+@mixin adaptive-font($pcSize, $phoneSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bVal: $phoneSize - $mVal * $phoneWidth;
+
+    font-size: $phoneSize;
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        font-size: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        font-size: $pcSize;
+    }
+}
+
+@mixin adaptive-line-height($pcSize, $phoneSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bVal: $phoneSize - $mVal * $phoneWidth;
+
+    line-height: $phoneSize;
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        line-height: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        line-height: $pcSize;
+    }
+}
+
+@mixin adaptive-font-tab($pcSize, $tabSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $tabSize) / ($maxWidth - $phoneWidth);
+    $bVal: $tabSize - $mVal * $phoneWidth;
+
+    font-size: $tabSize;
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        font-size: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        font-size: $pcSize;
+    }
+}
+
+@mixin adaptive-line-height-tab($pcSize, $tabSize) {
+    // Реализация на основе этой статьи: https://habr.com/ru/company/vk/blog/315196/
+    $mVal: ($pcSize - $tabSize) / ($maxWidth - $phoneWidth);
+    $bVal: $tabSize - $mVal * $phoneWidth;
+
+    line-height: $tabSize;
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        line-height: calc($mVal * 100vw + $bVal);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        line-height: $pcSize;
+    }
+}
+
+@mixin adaptive-font-all($pcSize, $tabSize, $phoneSize) {
+    $mValTab: ($pcSize - $tabSize) / ($maxWidth - $tabWidth);
+    $bValTab: $tabSize - $mValTab * $tabWidth;
+
+    $mValPhone: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bValPhone: $phoneSize - $mValPhone * $phoneWidth;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: $phoneSize;
+    }
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        font-size: calc($mValPhone * 100vw + $bValPhone);
+    }
+
+    @media screen and (min-width: $tabWidth) {
+        font-size: $tabSize;
+    }
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        font-size: calc($mValTab * 100vw + $bValTab);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        font-size: $pcSize;
+    }
+}
+
+@mixin adaptive-line-height-all($pcSize, $tabSize, $phoneSize) {
+    $mValTab: ($pcSize - $tabSize) / ($maxWidth - $tabWidth);
+    $bValTab: $tabSize - $mValTab * $tabWidth;
+
+    $mValPhone: ($pcSize - $phoneSize) / ($maxWidth - $phoneWidth);
+    $bValPhone: $phoneSize - $mValPhone * $phoneWidth;
+
+    @media screen and (max-width: $phoneWidth) {
+        line-height: $phoneSize;
+    }
+
+    @media screen and (min-width: ($phoneWidth + 1px)) {
+        line-height: calc($mValPhone * 100vw + $bValPhone);
+    }
+
+    @media screen and (min-width: $tabWidth) {
+        line-height: $tabSize;
+    }
+
+    @media screen and (min-width: ($tabWidth + 1px)) {
+        line-height: calc($mValTab * 100vw + $bValTab);
+    }
+
+    @media screen and (min-width: $maxWidth) {
+        line-height: $pcSize;
+    }
+}

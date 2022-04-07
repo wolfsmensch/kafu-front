@@ -3,3 +3,64 @@
     max-width: $content-max-width;
     margin: 0 auto;
 }
+
+.content {
+    .about-composition {
+        display: flex;
+        justify-content: space-between;
+        height: 760px;
+
+        @media screen and (max-width: 1680px) {
+            height: 48vw;
+        }
+
+        .banner, .details {
+            width: 48%;
+
+            @media screen and (max-width: 1680px) {
+                width: 48vw;
+            }
+        }
+
+        .banner {
+            position: relative;
+
+            .picture {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 0;
+            text-align: center;
+
+            color: $main-color;
+
+            .head {
+                text-transform: uppercase;
+            }
+
+            .title p {
+                width: 60%;
+                margin: auto;
+            }
+
+            .head, .title p {
+                @include adaptive-font-all(24px, 18px, 12px);
+                @include adaptive-line-height-all(29px, 22px, 15px);
+            }
+
+            h2 {
+                @include adaptive-font-all(48px, 30px, 18px);
+            }
+        }
+    }
+}
