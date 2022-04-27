@@ -1,3 +1,17 @@
+@mixin deleteLeftContentGap {
+    @media screen and (max-width: 1280px) {
+        margin-left: -44px;
+    }
+
+    @media screen and (max-width: $tabWidth) {
+        margin-left: -30px;
+    }
+
+    @media screen and (max-width: $midPhoneWidth) {
+        margin-left: unset;
+    }
+}
+
 .content-wrapper {
     width: 100%;
     max-width: $content-max-width;
@@ -192,6 +206,10 @@
             @media all and (max-width: $tabWidth) {
                 margin-bottom: 30px;
             }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                padding-top: 10px;   
+            }
         }
 
         p {
@@ -257,12 +275,9 @@
         justify-content: center;
         padding-bottom: 115px;
 
-        @media screen and (max-width: 1280px) {
-            margin-left: -44px;
-        }
+        @include deleteLeftContentGap();
 
         @media screen and (max-width: $tabWidth) {
-            margin-left: -30px;
             padding-bottom: 15px;
         }
 
@@ -272,6 +287,11 @@
 
             @media screen and (max-width: 1366px) {
                 margin-bottom: 10px;
+            }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                flex-direction: column;
+                margin-bottom: 0;
             }
         }
 
@@ -285,6 +305,11 @@
             @media screen and (max-width: $tabWidth) {
                 width: 125px;
                 height: 125px;
+            }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 22vw;
+                height: 22vw;
             }
         }
 
@@ -301,6 +326,12 @@
             flex-direction: row;
             align-items: flex-start;
 
+            @media screen and (max-width: $midPhoneWidth) {
+                text-align: left;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
             &_down {
                 display: flex;
                 flex-direction: column;
@@ -314,14 +345,25 @@
 
         &-elem-desc {
             padding: 0 10px;
+
             @media screen and (max-width: $tabWidth) {
                 width: 220px;
                 height: 125px;
+            }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 58vw;
+                height: auto;
             }
         }
 
         &-elem-btn {
             @include adaptive-font-all(18px, 18px, 12px);
+
+            @media screen and (max-width: $tabWidth) {
+                color: #fff;
+                background-color: $main-color;
+            }
         }
 
         &-title {
@@ -339,17 +381,16 @@
         align-items: center;
         padding: 143px 0 220px 0;
 
-        @media screen and (max-width: 1280px) {
-            margin-left: -44px;
-        }
+        @include deleteLeftContentGap();
 
         @media screen and (max-width: $tabWidth) {
-            margin-left: -30px;
             padding: 0 0 35px 0;
+            justify-content: space-around;
         }
 
-        @media screen and (max-width: $tabWidth) {
-            justify-content: space-around;
+        @media screen and (max-width: $midPhoneWidth) {
+            flex-direction: column;
+            padding-bottom: 0;
         }
 
         &-elem {
@@ -365,6 +406,11 @@
                 margin-right: 0;
             }
 
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 82vw;
+                margin-bottom: 10px;
+            }
+
             &:last-child {
                 margin-right: 0;
             }
@@ -378,12 +424,20 @@
                 background-size: 100% 100%;
                 height: 15.2vw;
             }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                height: 23vw;
+            }
         }
 
         &-elem-title {
             @include adaptive-font-all(36px, 27px, 18px);
             @include adaptive-line-height-all(44px, 33px, 22px);
             font-weight: 600;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                padding: 0 10px;
+            }
         }
 
         &-elem-pic,
@@ -398,19 +452,21 @@
         &-elem-btn {
             display: block;
             margin-bottom: 23px;
+            @include adaptive-font-all(24px, 18px, 12px);
         }
     }
 
     .cen {
         padding: 87px 0 240px 0;
 
-        @media screen and (max-width: 1280px) {
-            margin-left: -44px;
-        }
+        @include deleteLeftContentGap();
 
         @media screen and (max-width: $tabWidth) {
-            margin-left: -30px;
             padding: 0 0 35px 0;
+        }
+
+        @media screen and (max-width: $midPhoneWidth) {
+            padding: 0;
         }
 
         .row {
@@ -448,13 +504,17 @@
             position: relative;
             width: 400px;
             background-color: #f8f8f8;
+            padding: 7px 0;
             text-align: center;
 
             @media screen and (max-width: $tabWidth) {
                 width: 44.2vw;
             }
 
-            padding: 7px 0;
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 82vw;
+                margin-bottom: 20px;
+            }
         }
 
         &-elem-heading {
