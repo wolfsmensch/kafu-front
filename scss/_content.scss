@@ -241,6 +241,10 @@
             }
         }
     }
+
+    .fill-sec-bg {
+        background-color: #F8F8F8;
+    }
 }
 
 .study-page {
@@ -289,6 +293,45 @@
             @include adaptive-font-all(24px, 27px, 12px);
             @include adaptive-line-height-all(29px, 33px, 14.63px);
             font-weight: 600;
+        }
+    }
+
+    .fac {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 143px 0 220px 0;
+
+        &-elem {
+            background-color: #fff;
+            width: 462px;
+            height: 382px;
+            margin-right: 100px;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &-elem-pic {
+            width: 100%;
+            height: 129px;
+        }
+
+        &-elem-title {
+            @include adaptive-font-all(36px, 27px, 18px);
+            @include adaptive-line-height-all(44px, 33px, 22px);
+            font-weight: 600;
+        }
+
+        &-elem-pic, &-elem-title {
+            margin-bottom: 68px;
+        }
+
+        &-elem-btn {
+            margin-bottom: 23px;
         }
     }
 }
