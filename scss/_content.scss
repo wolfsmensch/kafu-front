@@ -257,9 +257,22 @@
         justify-content: center;
         padding-bottom: 115px;
 
+        @media screen and (max-width: 1280px) {
+            margin-left: -44px;
+        }
+
+        @media screen and (max-width: $tabWidth) {
+            margin-left: -30px;
+            padding-bottom: 15px;
+        }
+
         .row {
             display: flex;
             flex-direction: row;
+
+            @media screen and (max-width: 1366px) {
+                margin-bottom: 10px;
+            }
         }
 
         &-elem-pic,
@@ -268,8 +281,19 @@
             height: 228px;
         }
 
+        &-elem-pic {
+            @media screen and (max-width: $tabWidth) {
+                width: 125px;
+                height: 125px;
+            }
+        }
+
         &_left-gap {
             margin-left: 456px;
+
+            @media screen and (max-width: 1366px) {
+                margin-left: 0;
+            }
         }
 
         &-elem {
@@ -281,11 +305,19 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
+
+                @media screen and (max-width: $tabWidth) {
+                    display: block;
+                }
             }
         }
 
         &-elem-desc {
             padding: 0 10px;
+            @media screen and (max-width: $tabWidth) {
+                width: 220px;
+                height: 125px;
+            }
         }
 
         &-elem-btn {
@@ -307,12 +339,31 @@
         align-items: center;
         padding: 143px 0 220px 0;
 
+        @media screen and (max-width: 1280px) {
+            margin-left: -44px;
+        }
+
+        @media screen and (max-width: $tabWidth) {
+            margin-left: -30px;
+            padding: 0 0 35px 0;
+        }
+
+        @media screen and (max-width: $tabWidth) {
+            justify-content: space-around;
+        }
+
         &-elem {
             background-color: #fff;
             width: 462px;
             height: 382px;
             margin-right: 100px;
             text-align: center;
+
+            @media screen and (max-width: $tabWidth) {
+                width: 43vw;
+                height: auto;
+                margin-right: 0;
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -322,6 +373,11 @@
         &-elem-pic {
             width: 100%;
             height: 129px;
+
+            @media screen and (max-width: $tabWidth) {
+                background-size: 100% 100%;
+                height: 15.2vw;
+            }
         }
 
         &-elem-title {
@@ -333,15 +389,29 @@
         &-elem-pic,
         &-elem-title {
             margin-bottom: 68px;
+
+            @media screen and (max-width: $tabWidth) {
+                margin-bottom: 15px;
+            }
         }
 
         &-elem-btn {
+            display: block;
             margin-bottom: 23px;
         }
     }
 
     .cen {
         padding: 87px 0 240px 0;
+
+        @media screen and (max-width: 1280px) {
+            margin-left: -44px;
+        }
+
+        @media screen and (max-width: $tabWidth) {
+            margin-left: -30px;
+            padding: 0 0 35px 0;
+        }
 
         .row {
             display: flex;
@@ -351,12 +421,22 @@
 
             margin-bottom: 60px;
 
+            @media screen and (max-width: $tabWidth) {
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+
             &:last-child {
                 margin-bottom: 0;
             }
 
             .cen-elem {
                 margin-right: 40px;
+
+                @media screen and (max-width: $tabWidth) {
+                    margin-right: 0;
+                    margin-bottom: 50px;
+                }
 
                 &:last-child {
                     margin-right: 0;
@@ -369,6 +449,10 @@
             width: 400px;
             background-color: #f8f8f8;
             text-align: center;
+
+            @media screen and (max-width: $tabWidth) {
+                width: 44.2vw;
+            }
 
             padding: 7px 0;
         }
@@ -402,12 +486,21 @@
             right: 0;
             width: 100%;
 
+            @media screen and (max-width: $tabWidth) {
+                bottom: -8px;
+            }
+
             a {
                 background-color: #fff;
                 padding: 9px 50px;
                 @include adaptive-font-all(18px, 18px, 12px);
                 font-weight: 600;
                 box-shadow: 0px 0px 92px 7px rgba(0, 0, 0, 0.1);
+
+                @media screen and (max-width: $tabWidth) {
+                    color: #fff;
+                    background-color: $main-color;
+                }
             }
         }
     }
