@@ -242,3 +242,53 @@
         }
     }
 }
+
+.study-page {
+    .dep {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-elem-pic, &-elem-desc {
+            width: 228px;
+            height: 228px;
+        }
+
+        &_left-gap {
+            margin-left: 456px;
+        }
+
+        &-elem {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+
+            &_down {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+
+        &-elem-desc {
+            padding: 0 10px;
+        }
+
+        &-elem-btn {
+            @include adaptive-font-all(18px, 18px, 12px);
+        }
+
+        &-title {
+            margin-bottom: 15px;
+            @include adaptive-font-all(24px, 27px, 12px);
+            @include adaptive-line-height-all(29px, 33px, 14.63px);
+            font-weight: 600;
+        }
+    }
+}
