@@ -172,11 +172,12 @@
                 margin-right: 90px;
 
                 @media all and (max-width: $tabWidth) {
+                    max-width: 240px;
                     margin-right: 5px;
                 }
 
                 @media screen and (max-width: $midPhoneWidth) {
-                    margin: 0;
+                    margin: 0 auto 0 auto;
                 }
             }
         }
@@ -257,6 +258,67 @@
                     &:last-child {
                         margin-bottom: 0;
                     }
+                }
+            }
+        }
+
+        .article-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include deleteLeftContentGap();
+
+            @media screen and (max-width: $midPhoneWidth) {
+                flex-direction: column;
+            }
+
+            &-elem {
+                width: 50%;
+                padding: 23px 46px;
+
+                &_fill-bg
+                {
+                    background-color: #F8F8F8;
+                }
+
+                @media screen and (max-width: $tabWidth) {
+                    padding: 22px 5px 25px 30px;
+                }
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    width: 100%;
+                    padding: 5px;
+                }
+
+                h3 {
+                    @include adaptive-font-all(24px, 18px, 12px);
+                    margin: 0 0 20px 0;
+
+                    @media screen and (max-width: $midPhoneWidth) {
+                        padding-top: 20px;
+                    }
+                }
+
+                p {
+                    @include adaptive-font-all(18px, 16px, 12px);
+                    @include adaptive-line-height-all(30px, 25px, 20px);
+                }
+
+                .btn {
+                    @include adaptive-font-all(18px, 18px, 12px);
+                    font-weight: 600;
+                }
+            }
+
+            &_tasks {
+                margin-bottom: 50px;
+
+                .article-grid-elem {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
             }
         }
