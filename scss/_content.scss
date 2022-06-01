@@ -322,6 +322,38 @@
                 }
             }
         }
+
+        .hive-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                flex-direction: column;
+            }
+        }
+
+        .i10n-grid {
+            &-elem, &-elem .picture {
+                width: 380px;
+                height: 280px;
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    width: 154px;
+                    height: 113px;
+                }
+            }
+
+            &-elem {
+                margin: 25px;
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    margin: 0 0 25px 0;
+                }
+            }
+        }
     }
 
     .fill-sec-bg {
