@@ -354,6 +354,43 @@
                 }
             }
         }
+
+        .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            p, .desc p {
+                color: $text-secondary-color;
+                margin-bottom: 5px;
+
+                @include adaptive-font-all(24px, 18px, 12px);
+                @include adaptive-line-height-all(30px, 22px, 15px);
+
+                font-weight: 400;
+            }
+
+            .desc {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                background-color: #fff;
+
+                padding: 20px 50px;
+                margin-left: 35px;
+
+                min-width: 800px;
+                box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.1);
+                
+
+                .title-cell {
+                    flex-grow: 1;
+                }
+            }
+        }
     }
 
     .fill-sec-bg {
@@ -655,6 +692,174 @@
                     color: #fff;
                     background-color: $main-color;
                 }
+            }
+        }
+    }
+}
+
+.admission-page {
+    h2 {
+        color: $main-color;
+
+        max-width: 44vw;
+        margin: 0 0 10px 0;
+
+        @include adaptive-font-all(54px, 30px, 18px);
+        @include adaptive-line-height-all(66px, 36px, 22px);
+
+        font-weight: 600;
+
+        @media screen and (max-width: $midPhoneWidth) {
+            text-align: center;
+        }
+    }
+
+    h3 {
+        color: $main-color;
+
+        margin: 0;
+
+        @include adaptive-font-all(36px, 27px, 18px);
+        @include adaptive-line-height-all(44px, 33px, 22px);
+
+        font-weight: 600;
+    }
+
+    .row {
+        min-height: 520px;
+        padding: 40px 0;
+    }
+
+    .calculator-wrapper {
+        
+        background-color: $background-sec-color;
+
+        p {
+            color: $main-color;
+            margin-bottom: 5px;
+
+            @include adaptive-font-all(24px, 18px, 12px);
+            @include adaptive-line-height-all(30px, 22px, 15px);
+
+            font-weight: 400;
+        }
+
+        .cell:first-child {
+            margin-bottom: 20px;
+        }
+    }
+
+    .admission-calculator {
+        background-color: #fff;
+
+        width: 577px;
+        margin: auto;
+
+        border-radius: 30px;
+
+        .calc-tabs {
+            display: flex;
+            flex-direction: row;
+
+            &-item {
+                color: $inactive-elem-color;
+
+                flex-grow: 1;
+                padding: 20px 70px;
+
+                @include adaptive-font-all(24px, 18px, 12px);
+
+                font-weight: 600;
+                text-align: center;
+
+                &.active {
+                    color: $main-color;
+
+                    border: 1px solid $main-color;
+                    border-top-left-radius: 30px;
+                    border-top-right-radius: 30px;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .calc-content {
+            position: relative;
+
+            padding: 30px 90px;
+            border: 1px solid $main-color;
+
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+
+            border-top: none;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: calc(50% + 10px);
+                width: calc(50% - 30px);
+                border-top: 1px solid $main-color;
+                border-top-right-radius: 30px;
+            }
+        }
+
+        .calc-form {
+            &-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                width: 100%;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-field {
+                display: block;
+
+                color: #000;
+
+                padding: 10px 15px;
+
+                border: 1px solid $main-color;
+                border-radius: 10px;
+
+                text-align: center;
+
+                &__title {
+                    flex-grow: 1;
+                    line-height: 200%;
+                }
+
+                &__input {
+                    position: relative;
+                    width: 94px;
+                    margin-left: 13px;
+
+                    text-align: center;
+
+                    input[type="text"] {
+                        width: 100%;
+                        border: none;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .form-btn {
+                width: 100%;
+
+                margin-top: 25px;
+                border-radius: 10px;
+
+                @include adaptive-font-all(18px, 18px, 12px);
             }
         }
     }
