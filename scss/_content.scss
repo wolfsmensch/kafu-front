@@ -725,7 +725,13 @@
         font-weight: 600;
     }
 
-    .row {
+    h4 {
+        color: $main-color;
+        @include adaptive-font-all(24px, 18px, 12px);
+        font-weight: 400;
+    }
+
+    .content .content-body > .row {
         min-height: 520px;
         padding: 40px 0;
     }
@@ -860,6 +866,112 @@
                 border-radius: 10px;
 
                 @include adaptive-font-all(18px, 18px, 12px);
+            }
+        }
+    }
+
+    .spec-types-wrapper {
+        .tabs {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+
+            margin-bottom: 50px;
+
+            .tab {
+                cursor: pointer;
+                color: $inactive-elem-color;
+
+                padding: 25px 45px;
+                border: 1px solid transparent;
+
+                @include adaptive-font-all(36px, 27px, 18px);
+                font-weight: 500;
+
+                &.active, &:hover {
+                    color: $main-color;
+                    border-color: $main-color;
+                }
+            }
+        }
+    }
+
+    .sub-tab-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .side {
+            width: 48%;
+        }
+
+        .tab {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 35px;
+
+
+            .num {
+                width: 68px;
+                height: 68px;
+
+                margin-right: 70px;
+
+                border: 2px solid $main-color;
+                border-radius: 100%;
+
+                @include adaptive-font-all(28px, 12px, 12px);
+                font-weight: 500;
+                text-align: center;
+                line-height: 68px;
+            }
+
+            .title {
+                flex-grow: 1;
+
+                color: $inactive-elem-color;
+
+                @include adaptive-font-all(24px, 18px, 12px);
+                font-weight: 400;
+            }
+
+
+            &.active {
+                .num {
+                    color: #fff;
+                    background-color: $main-color;
+                }
+
+                .title {
+                    color: $main-color;
+                }
+            }
+        }
+
+        .sub-tab-content {
+            p {
+                color: #000;
+
+                margin-bottom: 40px;
+
+                @include adaptive-font-all(24px, 18px, 12px);
+                @include adaptive-line-height-all(29px, 22px, 15px);
+                font-weight: 300;
+            }
+
+            .btn {
+                min-width: 510px;
+                margin-bottom: 25px;
+                font-weight: 400;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
