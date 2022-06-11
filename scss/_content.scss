@@ -361,6 +361,16 @@
             justify-content: space-between;
             align-items: flex-start;
 
+            @media screen and (max-width: $midPhoneWidth) {
+                align-items: center;
+            }
+
+            .title {
+                @media screen and (max-width: $midPhoneWidth) {
+                    margin-bottom: 30px;
+                }
+            }
+
             p, .desc p {
                 color: $text-secondary-color;
                 margin-bottom: 5px;
@@ -385,15 +395,27 @@
                 min-width: 800px;
                 box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.1);
 
+                @media screen and (max-width: $tabWidth) {
+                    min-width: auto;
+                }
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    flex-direction: column;
+                    padding: 10px 25px;
+                    margin-left: 0;
+                }
+
                 .title-cell {
                     flex-grow: 1;
+
                     @media screen and (max-width: $tabWidth) {
                         margin-right: 80px;
                     }
-                }
 
-                @media screen and (max-width: $tabWidth) {
-                    min-width: auto;
+                    @media screen and (max-width: $midPhoneWidth) {
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }
@@ -716,6 +738,7 @@
         font-weight: 600;
 
         @media screen and (max-width: $midPhoneWidth) {
+            max-width: unset;
             text-align: center;
         }
     }
@@ -753,10 +776,38 @@
             min-height: 290px;
             padding: 40px 30px;
         }
+
+        @media screen and (max-width: $midPhoneWidth) {
+            padding: 20px 40px;
+        }
     }
 
     .calculator-wrapper {
         background-color: $background-sec-color;
+
+        @media screen and (max-width: $tabWidth) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: $midPhoneWidth) {
+            flex-direction: column;
+        }
+
+        .cell:first-child {
+            margin-bottom: 20px;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                margin-bottom: 30px;
+            }
+        }
+
+        h2 {
+            @media screen and (max-width: $midPhoneWidth) {
+                margin: auto;
+            }
+        }
 
         p {
             color: $main-color;
@@ -766,16 +817,6 @@
             @include adaptive-line-height-all(30px, 22px, 15px);
 
             font-weight: 400;
-        }
-
-        .cell:first-child {
-            margin-bottom: 20px;
-        }
-
-        @media screen and (max-width: $tabWidth) {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
         }
     }
 
@@ -791,9 +832,18 @@
             width: 57vw;
         }
 
+        @media screen and (max-width: $midPhoneWidth) {
+            width: 100%;
+            background-color: transparent;
+        }
+
         .calc-tabs {
             display: flex;
             flex-direction: row;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                display: none;
+            }
 
             &-item {
                 color: $inactive-elem-color;
@@ -821,6 +871,14 @@
             }
         }
 
+        .calc-title {
+            color: $text-secondary-color;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: left;
+        }
+
         .calc-content {
             position: relative;
 
@@ -837,6 +895,12 @@
                 padding: 30px 60px;
             }
 
+            @media screen and (max-width: $midPhoneWidth) {
+                padding: 0;
+                border: none;
+                border-radius: 0;
+            }
+
             &::before {
                 content: '';
                 display: block;
@@ -846,6 +910,10 @@
                 width: calc(50% - 30px);
                 border-top: 1px solid $main-color;
                 border-top-right-radius: 30px;
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    display: none;
+                }
             }
         }
 
@@ -875,6 +943,11 @@
 
                 text-align: center;
 
+                @media screen and (max-width: $midPhoneWidth) {
+                    background-color: #fff;
+                    border-radius: 0;
+                }
+
                 &__title {
                     flex-grow: 1;
                     line-height: 200%;
@@ -884,6 +957,10 @@
                     @media screen and (max-width: $tabWidth) {
                         padding: 2px 15px;
                     }
+
+                    @media screen and (max-width: $midPhoneWidth) {
+                        color: $main-color;
+                    }
                 }
 
                 &__input {
@@ -892,6 +969,11 @@
                     margin-left: 13px;
 
                     text-align: center;
+
+                    @media screen and (max-width: $midPhoneWidth) {
+                        width: 11.25vw;
+                        padding: 2px;
+                    }
 
                     input[type="text"] {
                         width: 100%;
@@ -908,6 +990,12 @@
                 border-radius: 10px;
 
                 @include adaptive-font-all(18px, 18px, 12px);
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    width: auto;
+                    margin: 5px auto 0 auto;
+                    border-radius: 0;
+                }
             }
         }
     }
@@ -978,6 +1066,16 @@
                     color: $inactive-elem-color;
                     font-size: 18px;
                     font-weight: 400;
+
+                    word-break: break-all;
+
+                    @media screen and (max-width: $midPhoneWidth) {
+                        font-size: 12px;
+                    }
+
+                    @media screen and (max-width: $phoneWidth) {
+                        font-size: 11px;
+                    }
                 }
 
                 .num, .title {
@@ -1004,6 +1102,20 @@
                         max-width: 300px;
                         padding: 5px 25px;
                         font-weight: 400;
+
+                        @media screen and (max-width: $midPhoneWidth) {
+                            min-width: 196px;
+                            margin-bottom: 10px;
+                            font-size: 12px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: $midPhoneWidth) {
+                        text-align: left;
                     }
                 }
             }
@@ -1098,8 +1210,17 @@
         justify-content: flex-start;
         align-items: center;
 
+        @media screen and (max-width: $midPhoneWidth) {
+            flex-direction: column;
+        }
+
         .cell:first-child {
             width: 48%;
+
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 100%;
+                order: 2;
+            }
         }
 
         .cell:last-child {
@@ -1108,9 +1229,20 @@
             @media screen and (max-width: $tabWidth) {
                 margin-left: 30px;
             }
+
+            @media screen and (max-width: $midPhoneWidth) {
+                order: 1;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
         }
 
         .events-list {
+            @media screen and (max-width: $midPhoneWidth) {
+                width: 100%;
+                text-align: left;
+            }
+
             h3, &-item {
                 margin-bottom: 50px;
 
@@ -1221,6 +1353,11 @@
                     width: 6.6vw;
                     height: 6.6vw;
                     padding: 2px 8px;
+                }
+
+                @media screen and (max-width: $midPhoneWidth) {
+                    width: 12.8vw;
+                    height: 12.8vw;
                 }
 
                 &.inactive-date {
