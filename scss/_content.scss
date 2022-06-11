@@ -975,4 +975,139 @@
             }
         }
     }
+
+    .events-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .cell:first-child {
+            width: 48%;
+        }
+
+        .cell:last-child {
+            margin-left: 65px;
+        }
+
+        .events-list {
+            h3, &-item {
+                margin-bottom: 50px;
+            }
+
+            &-item {
+                display: block;
+                padding: 15px 72px 15px 12px;
+                border: 1px solid $main-color;
+
+                .title {
+                    color: $main-color;
+                    @include adaptive-font-all(24px, 18px, 12px);
+                    font-weight: 600;
+                }
+
+                .date {
+                    color: $text-secondary-color;
+                    @include adaptive-font-all(18px, 18px, 12px);
+                    font-weight: 400;
+                }
+
+                &.important {
+                    .title {
+                        color: $important-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .events-calendar {
+        &-controls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 40px;
+
+            .btn-circle {
+                color: $main-color;
+                background: transparent;
+
+                width: 68px;
+                height: 68px;
+
+                padding: 0;
+                border: 1px solid $main-color;
+                border-radius: 100%;
+
+                font-size: 30px;
+                text-align: center;
+                line-height: 68px;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $main-color;
+                }
+            }
+
+            .title {
+                color: $main-color;
+                @include adaptive-font-all(36px, 27px, 18px);
+                font-weight: 600;
+            }
+        }
+
+        &-table {
+            width: 100%;
+            border: 1px solid $table-cell-border-color;
+            border-collapse: collapse;
+
+            td {
+                position: relative;
+                color: $main-color;
+
+                width: 6.9vw;
+                height: 6.9vw;
+
+                padding: 10px 24px;
+                border: 1px solid $table-cell-border-color;
+
+                @include adaptive-font-all(24px, 18px, 12px);
+                font-weight: 400;
+                text-align: right;
+                vertical-align: text-top;
+
+                &.inactive-date {
+                    color: $inactive-elem-color;
+                }
+
+                .event-marks {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+
+                    text-align: right;
+
+                    div {
+                        content: '';
+                        display: inline-block;
+                        width: 11px;
+                        height: 11px;
+                        background-color: $main-color;
+                        border-radius: 100%;
+                        margin-right: 4px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &.important {
+                            background-color: $important-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
