@@ -41,6 +41,12 @@ body {
     }
 }
 
+.show-tab {
+    @media screen and (min-width: 769px) {
+        display: none !important;
+    }
+}
+
 .show-mobile {
     @media screen and (min-width: 576px) {
         display: none !important;
