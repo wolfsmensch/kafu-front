@@ -183,7 +183,23 @@ $change-menu-mode-size: 1280px;
                 z-index: 1150;
 
                 div {
-                    background-color: #fff;
+                    visibility: hidden;
+                }
+
+                &::before, &::after {
+                    display: block;
+                    content: '';
+                    width: 21px;
+                    height: 13px;
+                    border-top: 1px solid #fff;
+                }
+
+                &::before {
+                    transform: rotateZ(45deg) translateY(50%);
+                }
+
+                &::after {
+                    transform: rotateZ(-45deg) translateY(-90%) translateX(86%);
                 }
             }
         }
