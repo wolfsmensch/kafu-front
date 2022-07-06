@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/index.css">
 
     <script src="/js/ui.js"></script>
+
+    <script src="/assets/glide.min.js"></script>
 </head>
 
 <body>
@@ -92,17 +94,31 @@
                 </div>
             </div>
 
-            <div class="grid-cell grid-cell-31 news">
+            <div id="news-list-slider" class="grid-cell grid-cell-31 news glide">
                 <div class="counter">1/12</div>
                 <h2>Новости</h2>
 
-                <article class="news-list">
-                    <section>
-                        <a href="#">
-                            <h3>Surge in mail-in voting, health concerns portend a messy Election Day </h3>
-                        </a>
-                        <div class="published-time">09 Января 2020</div>
-                    </section>
+                <article class="news-list glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        <section class="glide__slide">
+                            <a href="#">
+                                <h3>Заголовок 1: Surge in mail-in voting, health concerns portend a messy Election Day </h3>
+                            </a>
+                            <div class="published-time">09 Января 2020</div>
+                        </section>
+                        <section class="glide__slide">
+                            <a href="#">
+                                <h3>Заголовок 2: Surge in mail-in voting, health concerns portend a messy Election Day </h3>
+                            </a>
+                            <div class="published-time">09 Января 2020</div>
+                        </section>
+                        <section class="glide__slide">
+                            <a href="#">
+                                <h3>Заголовок 3: Surge in mail-in voting, health concerns portend a messy Election Day </h3>
+                            </a>
+                            <div class="published-time">09 Января 2020</div>
+                        </section>
+                    </div>
                 </article>
 
                 <div class="row">
@@ -110,11 +126,23 @@
                 </div>
             </div>
 
-            <div class="grid-cell grid-cell-32 news-banners">
-                <button class="btn-banner btn-left"></button>
-                <div class="picture row-3-picture" style="background-image: url(https://via.placeholder.com/840);">
+            <div id="news-pictures-slider" class="grid-cell grid-cell-32 news-banners glide">
+
+                <div class="glide__track pictures row-3-picture" data-glide-el="track">
+                    <div class="glide__slides">
+                        <img class="picture glide__slide" src="https://via.placeholder.com/840" alt="Тестовая картинка">
+    
+                        <img class="picture glide__slide" src="https://via.placeholder.com/840" alt="Тестовая картинка">
+
+                        <img class="picture glide__slide" src="https://via.placeholder.com/840" alt="Тестовая картинка">
+                    </div>
                 </div>
-                <button class="btn-banner btn-right"></button>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="btn-banner btn-left glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+                    <button class="btn-banner btn-right glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+                </div>
+                
             </div>
 
             <div class="grid-cell grid-cell-41 announcements-banners">
@@ -218,6 +246,24 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        const newsListTextSlider = new Glide('#news-list-slider', {
+            perView: 1,
+            animationDuration: 0,
+        });
+        const newsListPicturesSlider = new Glide('#news-pictures-slider', {
+            perView: 1,
+            animationDuration: 0,
+        });
+
+        newsListPicturesSlider.on('run', function(event) {
+            newsListTextSlider.go(event.direction);
+        });
+
+        newsListTextSlider.mount();
+        newsListPicturesSlider.mount();
+    </script>
 </body>
 
 </html>

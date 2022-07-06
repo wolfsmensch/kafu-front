@@ -130,3 +130,7 @@ input {
         }
     }
 }
+
+.glide__slide:not(.glide__slide--active) {
+    opacity: 0;
+}

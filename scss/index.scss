@@ -189,7 +189,7 @@
     .grid-cell {
         position: relative;
 
-        .picture {
+        div.picture {
             position: absolute;
             left: 0;
             right: 0;
@@ -198,7 +198,7 @@
         }
 
         &.grid-cell-21 {
-            .picture {
+            div.picture {
                 background-size: auto 100%;
                 background-position: top right;
             }
@@ -271,6 +271,11 @@
         .news-list {
             display: flex;
             flex-grow: 1;
+
+            .glide__slides {
+                display: flex;
+                flex-direction: row;
+            }
 
             section {
                 display: flex;
